@@ -4,8 +4,9 @@
 class Player{
     protected:
         char move;
-        std::string name;
+        
     public:
+        std::string name;
         Player();
         virtual char makeMove();
         virtual std::string getName();

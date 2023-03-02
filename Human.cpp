@@ -2,14 +2,14 @@
 #include <iostream>
 using namespace std;
 
-Human::Human(string name1){
-    if(name1 == ""){name == "Human";};
-    this->name = name;};
 
-string Human::getName(){
-        return name;};
+Human::Human():Human("Human") {};
 
-char Human::makeMove(){ // to make move function
+Human::Human(std::string name) {this->name = name; };
+
+string Human::getName(){return name;};
+
+char Human::makeMove(){ 
         cout << this->name << "Enter the move: ";
         cin >> move; 
         return move; 

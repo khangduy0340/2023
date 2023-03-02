@@ -7,13 +7,13 @@ using namespace std;
 
 int main()
 {
-    cout << "Enter Player name: "; // welcome line
-        string username;
-        cin >> username; // take user name
-        Human *user = new Human(username);
+    cout << "Enter Player name: "; 
+        string pName;
+        cin >> pName; 
+        Human *human1 = new Human(pName);
         Computer *cmp = new Computer();
         Referee *ref = new Referee();
-        Player* p = ref->refGame(user,cmp);
+        Player* p = ref->refGame(human1,cmp);
         cout<<"The winner is: "<< p->getName();
     return 0;
 }
