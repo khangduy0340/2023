@@ -60,9 +60,17 @@ class Player
     virtual Move* makeMove()=0;
     virtual string getName(){return pName;};
 };
-
+class Computer:public Player{
+    public:
+    Computer(){pName = "Computer";};
+    Rock* r;
+    Move* makeMove() override { 
+    return r;
+}
+};
 class Human: public Player{
     public:
+    Human(){pName = "Human";};
     Human(string name){pName=name;};
     
     Move* makeMove() override { 
@@ -102,13 +110,17 @@ class Referee
 };
 
 int main(){
-    Player* p1 = new Human("Khang");
-    Player* p2 = new Human("Alfred");
-    Referee* r = new Referee();
-    
-    Player* p = r->refGame(p1,p2);
- 
-   if(p==nullptr){cout << "Tie";return 0;};
-   cout << "The winner is: "<<p->getName();
+   Move* test_move;
+   test_move=new Rock;
+   if(test_move->getName()=="Rock"){cout << "Test 1";};
+   Human player1 = Human("John");
+   Computer player2 = Computer();
+   Human player3 = Human();
+   Referee referee = Referee();
+
+   if(player1.getName()=="John"){cout << "Test 2";};
+   if(player2.getName()=="Computer"){cout << "Test 3";};
+   if(player3.getName()=="Human"){cout << "Test 4";};
 return 0;
+
 }

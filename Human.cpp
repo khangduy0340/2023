@@ -3,12 +3,11 @@
 #include "roleList.h"
 using namespace std;
 
-Human::Human():Human("Human"){};
+Human::Human(){pName="Human";};
 
 Human::Human(string iName){this->pName=iName;};
     Move* Human::makeMove() { 
         string move;
-        cout  << "Enter the move: ";
         cin >> move; 
         if(move == "Rock"){return new Rock();};
         if(move == "Paper"){return new Paper();};
