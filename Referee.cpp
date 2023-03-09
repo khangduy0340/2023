@@ -5,7 +5,8 @@ Player* Referee::refGame(Player *player1, Player *player2){
     // Create 2 variables that take in 2 moves
         Move * move1 = player1->makeMove();
         Move * move2 = player2->makeMove();
-        
+       
+
         // Case tie as 2 moves are the same
         if(move1->getName()==move2->getName()){return nullptr;};
         

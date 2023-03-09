@@ -61,6 +61,16 @@ class Player
     virtual string getName(){return pName;};
 };
 
+
+class Computer:public Player{
+    public:
+    Computer(){pName = "Computer";};
+    
+    Move* makeMove() { 
+    return new Rock();
+}
+};
+
 class Human: public Player{
     public:
     Human(string name){pName=name;};
@@ -105,8 +115,9 @@ int main(){
     Player* p1 = new Human("Khang");
     Player* p2 = new Human("Alfred");
     Referee* r = new Referee();
-    
-    Player* p = r->refGame(p1,p2);
+    Computer* cmp = new Computer();
+
+    Player* p = r->refGame(p1,cmp);
  
    if(p==nullptr){cout << "Tie";return 0;};
    cout << "The winner is: "<<p->getName();

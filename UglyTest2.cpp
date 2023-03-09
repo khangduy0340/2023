@@ -63,9 +63,9 @@ class Player
 class Computer:public Player{
     public:
     Computer(){pName = "Computer";};
-    Rock* r;
-    Move* makeMove() override { 
-    return r;
+    
+    Move* makeMove() { 
+    return new Rock();
 }
 };
 class Human: public Player{
