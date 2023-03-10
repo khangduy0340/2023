@@ -7,7 +7,6 @@ Human::Human(){pName="Human";};
 
 Human::Human(string iName){this->pName=iName;};
     Move* Human::makeMove() { 
-        cout << "huCheck";
         string move;
         cin >> move; 
         if(move == "Rock"){return new Rock();};
