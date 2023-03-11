@@ -6,9 +6,10 @@ Player* Referee::refGame(Player *player1, Player *player2){
         Move * move1 = player1->makeMove();
         Move * move2 = player2->makeMove();
         
+        Player *player3 = new Human("Tie");
         
         // Case tie as 2 moves are the same
-        if(move1->getName()==move2->getName()){return nullptr;};
+        if(move1->getName()==move2->getName()){return player3;};
         vector <string> k = move1->getVector();
        
         // Run function that decide which player will win
