@@ -18,9 +18,10 @@ Player* Referee::refGame(Player *player1, Player *player2){
 
         // Case move2 inside move1 winning list
         // move1 win -> player1 win
-        if(winner){return player1;};
+        if(winner){cout << "Player1";return player1;};
 
         
         // As if those two conditions are not passed then player 2 is won
+        cout << "Player2";
         return player2;
 }
