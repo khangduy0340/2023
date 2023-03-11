@@ -7,10 +7,6 @@ Player* Referee::refGame(Player *player1, Player *player2){
         Move * move1 = player1->makeMove();
         Move * move2 = player2->makeMove();
         
-        cout << player1->getName();
-        cout << player1->getName();
-    
-        
         // Case tie as 2 moves are the same
         if(move1->getName()==move2->getName()){cout<<"Tie";return nullptr;};
         vector <string> k = move1->getVector();
