@@ -5,5 +5,5 @@ Rock::Rock(){moveName="Rock";};
 
 string Rock::getName() {return moveName; };
 vector <string> Rock::getVector(){
-    vector <string> winVector = {"Scissor"};
+    vector <string> winVector = {"Scissors"};
         return winVector;};

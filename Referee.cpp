@@ -8,7 +8,7 @@ Player* Referee::refGame(Player *player1, Player *player2){
         Move * move2 = player2->makeMove();
         
         // Case tie as 2 moves are the same
-        if(move1->getName()==move2->getName()){cout<<"Tie ";return nullptr;};
+        if(move1->getName()==move2->getName()){cout<<"Tie";return nullptr;};
         vector <string> k = move1->getVector();
        
         // Run function that decide which player will win
@@ -16,10 +16,9 @@ Player* Referee::refGame(Player *player1, Player *player2){
 
         // Case move2 inside move1 winning list
         // move1 win -> player1 win
-        if(winner){cout << player1->getName() <<" ";return player1;};
+        if(winner){return player1;};
 
         
         // As if those two conditions are not passed then player 2 is won
-        cout << player2 ->getName() << " ";
         return player2;
 }

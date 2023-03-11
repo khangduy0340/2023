@@ -11,7 +11,7 @@ Human::Human(string iName){this->pName=iName;};
         cin >> move; 
         if(move == "Rock"){return new Rock();};
         if(move == "Paper"){return new Paper();};
-        if(move == "Scissor"){return new Scissor();};
+        if(move == "Scissors"){return new Scissors();};
         if(move == "Ninja"){return new Ninja();};
         if(move == "Pirate"){return new Pirate();};
         if(move == "Zombie"){return new Zombie();};

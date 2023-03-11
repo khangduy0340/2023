@@ -6,12 +6,12 @@ using namespace std;
 
 int main() {
 Referee* referee = new Referee();
-Player* human = new Human();
+Player* human = new Human("Khang");
 Player* computer = new Computer();
 Player* winner;
 
-winner = referee->refGame(human, computer);
+winner = referee->refGame(computer, human);
 
-cout << " " << winner->getName();
+cout << "   " << winner->getName();
 return 0;
 }
