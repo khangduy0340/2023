@@ -1,24 +1,17 @@
-#include "Referee.h"
-#include "Human.h"
 #include "Computer.h"
+#include "Human.h"
+#include "Referee.h"
 using namespace std;
 
-int main(){
 
+int main() {
+Referee* referee = new Referee();
+Player* human = new Human();
+Player* computer = new Computer();
+Player* winner;
 
-  Human* p1 = new Human("Khang");
-  Human* p2 = new Human("Alfred");
-  Referee* r = new Referee();
-  Computer* cmp = new Computer();
+winner = referee->refGame(human, computer);
 
-  Player* p = r->refGame(p1, p2);
-  //Player* p = r->refGame(p1, cmp);
-
-  if (p == nullptr) {
-    cout << "Tie";
-    return 0;
-  };
-
-  cout << "The winner is: " << p->getName();
-  return 0;
+cout << " " << winner->getName();
+return 0;
 }

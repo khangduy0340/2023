@@ -2,15 +2,17 @@
 using namespace std;
 Referee::Referee(){};
 Player* Referee::refGame(Player *player1, Player *player2){
-        cout << "Called "; 
+        
     // Create 2 variables that take in 2 moves
         Move * move1 = player1->makeMove();
         Move * move2 = player2->makeMove();
         
-        Player *player3 = new Human("Tie");
+        cout << player1->getName();
+        cout << player1->getName();
+    
         
         // Case tie as 2 moves are the same
-        if(move1->getName()==move2->getName()){cout << "Tie!";return nullptr;};
+        if(move1->getName()==move2->getName()){cout<<"Tie";return nullptr;};
         vector <string> k = move1->getVector();
        
         // Run function that decide which player will win
@@ -18,10 +20,10 @@ Player* Referee::refGame(Player *player1, Player *player2){
 
         // Case move2 inside move1 winning list
         // move1 win -> player1 win
-        if(winner){cout << "Player1";return player1;};
+        if(winner){cout << player1->getName(), player1;};
 
         
         // As if those two conditions are not passed then player 2 is won
-        cout << "Player2";
+        cout << player2 ->getName();
         return player2;
 }

@@ -5,4 +5,4 @@ using namespace std;
 
 Computer::Computer(){pName="Computer";};
 Move* Computer::makeMove(){return new Rock();};
-string Computer::getName(){cout << "Name";return pName;};
+string Computer::getName(){return pName;};
