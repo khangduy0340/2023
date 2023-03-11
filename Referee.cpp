@@ -1,12 +1,13 @@
 #include "Referee.h"
 using namespace std;
 Referee::Referee(){};
-Player* Referee::refGame(Player *player1, Player *player2){ 
+Player* Referee::refGame(Player *player1, Player *player2){
+        cout << "Called "; 
     // Create 2 variables that take in 2 moves
         Move * move1 = player1->makeMove();
         Move * move2 = player2->makeMove();
         
-        
+        Player *player3 = new Human("Tie");
         
         // Case tie as 2 moves are the same
         if(move1->getName()==move2->getName()){return NULL;};
