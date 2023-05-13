@@ -1,39 +1,39 @@
+#include "Autocomplete.h"
 #include "Trie.h"
 #include <iostream>
-#include "Autocomplete.h"
 using namespace std;
-Autocomplete::Autocomplete(){
+Autocomplete::Autocomplete() {
     root = new Trie();
 }
-void Autocomplete::insert(string word){
+void Autocomplete::insert(string word) {
     Trie* currNode = root;
-    for (char c : word){
-        if(currNode->children.find(c)==currNode->children.end()){
-            currNode->children[c]= new Trie;
+    for (char c : word) {
+        if (currNode->children.find(c) == currNode->children.end()) {
+            currNode->children[c] = new Trie();
         }
         currNode = currNode->children[c];
     }
-    currNode->isEnd == true;
+    currNode->isEnd = true;
 }
-void Autocomplete::traverse(Trie* currNode, std::string& word, std::vector<std::string>& result){
-    if(currNode->isEnd){
-        result.push_back(word);
+void Autocomplete::traverse(Trie* currNode,string word,vector<string>& res) {
+    if (currNode->isEnd) {
+        res.push_back(word);
     }
-    for(auto it : currNode->children){
+    for (auto it : currNode->children) {
         word.push_back(it.first);
-        traverse(it.second,word,result);
+        traverse(it.second, word, res);
         word.pop_back();
     }
 }
-vector<string> Autocomplete::getSuggestions(string partialWord){
-    vector<string> result;
+vector<string> Autocomplete::getSuggestions(string partialWord) {
+   vector<string> res;
     Trie* currNode = root;
-    for (char c: partialWord){
-        if(currNode->children.find(c)==currNode->children.end()){
-            return result;
+    for (char c : partialWord) {
+        if (currNode->children.find(c) == currNode->children.end()) {
+            return res;
         }
-        currNode = currNode->children[c];
+       currNode = currNode->children[c];
     }
-    traverse(currNode,partialWord,result);
-    return result;
+    traverse(currNode, partialWord, res);
+    return res;
 }
